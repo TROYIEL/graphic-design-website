@@ -13,23 +13,23 @@ export const metadata: Metadata = {
   title: "TEX-TECH",
   description:
     "Designing brands that speak, sell & scale. Expert branding, logo design, and graphics for tech companies.",
-  generator: "v0.app",
+  generator: "tex-technologies",
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+        url: "",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png",
+        url: "",
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/icon.svg",
+        url: "",
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "",
   },
 }
 
