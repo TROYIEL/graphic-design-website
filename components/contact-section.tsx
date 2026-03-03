@@ -28,7 +28,8 @@ Message: ${message}
 
     window.open(
       `https://wa.me/${whatsappNumber}?text=${encodedMessage}`,
-      "_blank"
+      "_blank",
+      "noopener,noreferrer"
     )
 
     setLoading(false)

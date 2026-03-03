@@ -3,12 +3,12 @@
 import { MessageCircle } from "lucide-react"
 
 export function WhatsAppButton() {
-  const whatsappNumber = "+256751642598" 
+  const whatsappNumber = "256751642598"
   const message = "Hi! I'm interested in your design services."
 
   const handleWhatsAppClick = () => {
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
-    window.open(url, "_blank")
+    window.open(url, "_blank", "noopener,noreferrer")
   }
 
   return (

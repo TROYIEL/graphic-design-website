@@ -1,10 +1,19 @@
 "use client"
 
+import type { MouseEvent } from "react"
 import Link from "next/link"
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const scrollToSection = (sectionId: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault()
+    document.getElementById(sectionId)?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "start",
+    })
+  }
 
   return (
     <footer className="bg-foreground/5 border-t border-border py-12">
@@ -18,7 +27,7 @@ export function Footer() {
               </div>
               <span className="font-bold">TEX-TECH</span>
             </div>
-            <p className="text-foreground/60 text-sm">YOUR ONE TECH  SOLUTION</p>
+            <p className="text-foreground/60 text-sm">YOUR ONE TECH SOLUTION</p>
           </div>
 
           {/* Quick Links */}
@@ -26,22 +35,22 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-foreground/60">
               <li>
-                <Link href="#about" className="hover:text-primary transition">
+                <Link href="#about" onClick={scrollToSection("about")} className="hover:text-primary transition">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="hover:text-primary transition">
+                <Link href="#services" onClick={scrollToSection("services")} className="hover:text-primary transition">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="#portfolio" className="hover:text-primary transition">
+                <Link href="#portfolio" onClick={scrollToSection("portfolio")} className="hover:text-primary transition">
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-primary transition">
+                <Link href="#contact" onClick={scrollToSection("contact")} className="hover:text-primary transition">
                   Contact
                 </Link>
               </li>
@@ -53,22 +62,22 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-sm text-foreground/60">
               <li>
-                <a href="#services" className="hover:text-primary transition">
+                <a href="#services" onClick={scrollToSection("services")} className="hover:text-primary transition">
                   Branding
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-primary transition">
+                <a href="#services" onClick={scrollToSection("services")} className="hover:text-primary transition">
                   Design
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-primary transition">
+                <a href="#services" onClick={scrollToSection("services")} className="hover:text-primary transition">
                   Motion Graphics
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-primary transition">
+                <a href="#services" onClick={scrollToSection("services")} className="hover:text-primary transition">
                   UI/Web
                 </a>
               </li>
