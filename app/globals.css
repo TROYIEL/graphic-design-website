@@ -160,3 +160,19 @@
 .animate-glow {
   animation: glow 2s ease-in-out infinite;
 }
+
+@keyframes bulb-glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.8), 0 0 20px rgba(250, 204, 21, 0.55);
+    opacity: 0.95;
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(251, 191, 36, 1), 0 0 30px rgba(250, 204, 21, 0.82);
+    opacity: 1;
+  }
+}
+
+.animate-bulb-glow-pulse {
+  animation: bulb-glow-pulse 1.15s ease-in-out infinite;
+}
