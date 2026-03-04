@@ -116,9 +116,9 @@ We'll be in touch shortly.
       const message = `Hi! I've submitted my branding discovery form. Here are my details:\n\n${pdfContent}`
       const encodedMessage = encodeURIComponent(message)
 
-      // Open WhatsApp with the message (replace with your actual WhatsApp number)
-      const whatsappNumber = "+256751642598" // Replace with actual number
-      window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank")
+      // Open WhatsApp with the message using international format (no + or spaces)
+      const whatsappNumber = "256751642598"
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank", "noopener,noreferrer")
 
       setSubmitted(true)
       setStep(0)
@@ -139,7 +139,7 @@ We'll be in touch shortly.
       setTimeout(() => {
         setSubmitted(false)
       }, 5000)
-    } catch (err) {
+    } catch {
       setError("Failed to process submission. Please try again.")
     } finally {
       setLoading(false)

@@ -1,8 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
 
 export function HeroSection() {
   const [scrollY, setScrollY] = useState(0)
@@ -45,7 +43,7 @@ export function HeroSection() {
         </h1>
 
         <p className="text-lg sm:text-xl text-foreground/70 max-w-2xl mx-auto mb-15 text-balance">
-          We specialize in brand identity, logo design, web developed and digital creativity. Transform your vision into stunning
+          We specialize in brand identity, logo design, web development, and digital creativity. Transform your vision into stunning
           visuals that resonate with your audience.
         </p>
 

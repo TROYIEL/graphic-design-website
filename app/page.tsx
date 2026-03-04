@@ -9,20 +9,42 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { HorizontalScroll } from "@/components/horizontal-scroll"
 
 export default function Home() {
   return (
-    <main className="w-full overflow-hidden">
+    <>
       <Navigation />
-      <HeroSection />
-      <AboutSection />
-      <ServicesSection />
-      <BrandingForm />
-      <PortfolioSection />
-      <StatsSection />
-      <ContactSection />
-      <Footer />
+      <HorizontalScroll>
+        <div data-horizontal-slide className="h-screen w-screen shrink-0 snap-start overflow-y-auto overflow-x-hidden">
+          <HeroSection />
+        </div>
+        <div data-horizontal-slide className="h-screen w-screen shrink-0 snap-start overflow-y-auto overflow-x-hidden">
+          <AboutSection />
+        </div>
+        <div data-horizontal-slide className="h-screen w-screen shrink-0 snap-start overflow-y-auto overflow-x-hidden">
+          <ServicesSection />
+        </div>
+        <div data-horizontal-slide className="h-screen w-screen shrink-0 snap-start overflow-y-auto overflow-x-hidden">
+          <BrandingForm />
+        </div>
+        <div data-horizontal-slide className="h-screen w-screen shrink-0 snap-start overflow-y-auto overflow-x-hidden">
+          <PortfolioSection />
+        </div>
+        <div data-horizontal-slide className="h-screen w-screen shrink-0 snap-start overflow-y-auto overflow-x-hidden">
+          <StatsSection />
+        </div>
+        <div data-horizontal-slide className="h-screen w-screen shrink-0 snap-start overflow-y-auto overflow-x-hidden">
+          <TestimonialsSection />
+        </div>
+        <div data-horizontal-slide className="h-screen w-screen shrink-0 snap-start overflow-y-auto overflow-x-hidden">
+          <ContactSection />
+        </div>
+        <div data-horizontal-slide className="h-screen w-screen shrink-0 snap-start overflow-y-auto overflow-x-hidden">
+          <Footer />
+        </div>
+      </HorizontalScroll>
       <WhatsAppButton />
-    </main>
+    </>
   )
 }

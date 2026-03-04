@@ -1,12 +1,22 @@
 "use client"
 
 import { useState } from "react"
+import type { MouseEvent } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+
+  const scrollToSection = (sectionId: string) => (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    setIsOpen(false)
+    document.getElementById(sectionId)?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "start",
+    })
+  }
 
   return (
     <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
@@ -25,91 +35,73 @@ export function Navigation() {
             <Link
               href="#about"
               className="text-foreground hover:text-primary transition"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
-              }}
+              onClick={scrollToSection("about")}
             >
               About
             </Link>
             <Link
               href="#services"
               className="text-foreground hover:text-primary transition"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })
-              }}
+              onClick={scrollToSection("services")}
             >
               Services
             </Link>
             <Link
               href="#portfolio"
               className="text-foreground hover:text-primary transition"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })
-              }}
+              onClick={scrollToSection("portfolio")}
             >
               Portfolio
             </Link>
             <Link
               href="#contact"
               className="text-foreground hover:text-primary transition"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-              }}
+              onClick={scrollToSection("contact")}
             >
               Contact
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
+          <button
+            className="md:hidden p-2"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav-menu"
+          >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden pb-4 space-y-2">
+          <div id="mobile-nav-menu" className="md:hidden pb-4 space-y-2">
             <Link
               href="#about"
               className="block px-3 py-2 rounded hover:bg-muted"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
-              }}
+              onClick={scrollToSection("about")}
             >
               About
             </Link>
             <Link
               href="#services"
               className="block px-3 py-2 rounded hover:bg-muted"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })
-              }}
+              onClick={scrollToSection("services")}
             >
               Services
             </Link>
             <Link
               href="#portfolio"
               className="block px-3 py-2 rounded hover:bg-muted"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })
-              }}
+              onClick={scrollToSection("portfolio")}
             >
               Portfolio
             </Link>
             <Link
               href="#contact"
               className="block px-3 py-2 rounded hover:bg-muted"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-              }}
+              onClick={scrollToSection("contact")}
             >
               Contact
             </Link>

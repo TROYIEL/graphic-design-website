@@ -58,7 +58,7 @@ export function AboutSection() {
               {[
                 "Brand identity and strategy",
                 "Digital and print design",
-                "web Development and maintenance",
+                "Web development and maintenance",
                 "User experience optimization",
                 "Creative direction and consulting",
               ].map((item, index) => (
