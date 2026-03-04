@@ -7,22 +7,22 @@ import { Star } from "lucide-react"
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    company: "Tech Innovations Inc.",
+    name: "ELIA .A",
+    company: "sHOPCHEAP E-commerce",
     text: "The team completely transformed our brand. The design work was professional, creative, and delivered exactly what we needed.",
     rating: 5,
   },
   {
     id: 2,
-    name: "Michael Chen",
-    company: "Fashion Forward",
+    name: "COLLINS .M",
+    company: "BASS",
     text: "Outstanding service from start to finish. They understood our vision and brought it to life beautifully.",
     rating: 5,
   },
   {
     id: 3,
-    name: "Emma Williams",
-    company: "Digital Marketing Co.",
+    name: "Emma .A ",
+    company: "HGM UG.",
     text: "Highly recommended! The creative solutions they provided exceeded our expectations and significantly improved our brand presence.",
     rating: 5,
   },

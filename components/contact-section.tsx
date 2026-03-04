@@ -1,12 +1,14 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Mail, Phone } from "lucide-react"
 
 export function ContactSection() {
   const whatsappNumber = "256751642598"
+  const currentYear = new Date().getFullYear()
 
   const [loading, setLoading] = useState(false)
   const [name, setName] = useState("")
@@ -113,6 +115,18 @@ Message: ${message}
               </form>
             </CardContent>
           </Card>
+        </div>
+
+        <div className="mt-12 border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-foreground/60">
+          <p>&copy; {currentYear} TEX-TECH. All rights reserved.</p>
+          <div className="flex gap-6 mt-4 md:mt-0">
+            <Link href="#" className="hover:text-primary transition">
+              Privacy Policy
+            </Link>
+            <Link href="#" className="hover:text-primary transition">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </section>
